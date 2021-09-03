@@ -4,12 +4,14 @@
     <v-main>
       <Container />
     </v-main>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
 import Nav from "./components/Nav.vue";
 import Container from "./views/Container.vue";
+import Footer from "./components/Footer.vue"
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
   components: {
     Nav,
     Container,
+    Footer
   },
 };
 </script>
@@ -25,5 +28,6 @@ export default {
 *:before,
 *:after {
   box-sizing: border-box;
+  overflow: hidden;
 }
 </style>

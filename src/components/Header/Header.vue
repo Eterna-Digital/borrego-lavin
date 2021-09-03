@@ -4,7 +4,8 @@
     d-flex flex-column justify-end align-center"
     tile
     width="100vw"
-    height="70vh"
+    height="75vh"
+    elevation="0"
   >
     <div class="d-flex flex-column align-center justify-center mb-5">
       <div class="wrapper">
@@ -29,7 +30,7 @@
         </label>
       </div>
     </div>
-    <div class="d-flex align-center flex-column mr-3 mt-10" style="width: 100%">
+    <div class="d-flex align-center flex-column mr-5 mt-10" style="width: 100%">
       <img src="../../assets/down-arrow.svg" width="35" />
       <span class="line-header mt-3"></span>
     </div>
@@ -101,13 +102,13 @@ export default {
   border-radius: 50%;
   cursor: pointer;
   display: block;
-  height: 10px;
+  height: 8px;
   left: 0;
   margin: 0px;
   left: 0;
   position: absolute;
   top: 3px;
-  width: 10px;
+  width: 8px;
 }
 
 .custom-radio span.radio:after {
