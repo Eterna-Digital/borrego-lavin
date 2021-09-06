@@ -20,7 +20,7 @@
         <div class="cont">
           <div class="line">
             <div class="number">
-              <h1 class="num">05</h1>
+              <h1 class="num"></h1>
             </div>
             <div class="links-carousel">
               <p>CONSULTORÍA JURÍDICO PENAL</p>
@@ -35,7 +35,7 @@
         <div class="crsl">
           <div class="carousel-wrapper mt-1">
             <div class="controls">
-              <h1 class="pl-8">Extradicion</h1>
+              <h1 class="pl-8" style="color: transparent">Extradicion</h1>
               <div class="btns">
                 <v-btn class="mr-3" icon @click="changeSlide(-1)">
                   <img
