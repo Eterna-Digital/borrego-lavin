@@ -53,10 +53,10 @@
             </div>
             <div class="carousel">
               <div class="cc-txt">
-                <div class="cont-text d-flex flex-column">
+                <div key='first' v-if='showFirst' class="cont-text d-flex flex-column">
                   <h3 class="mb-3">CONSULTORÍA JURÍDICO PENAL</h3>
                   <p>
-                    Borrego Lavín Abogados cuenta con profesionales de la
+                    <b>Borrego Lavín Abogados</b> cuenta con profesionales de la
                     materia con conocimientos amplios, suficientes y
                     especializados para la atención de cualquier tipo de
                     consulta relacionada a la materia penal. <br />
@@ -82,7 +82,7 @@
                 </div>
               </div>
               <div class="cc-txt">
-                <div class="cont-text d-flex flex-column">
+                <div key="first" v-if='showFirst' class="cont-text d-flex flex-column">
                   <h3 class="mb-3">LITIGIO PENAL</h3>
                   <p>
                     El litigio penal es la puesta en práctica de los
@@ -91,8 +91,8 @@
                     La atención del procedimiento penal puede darse desde la
                     perspectiva de la defensa al imputado o asesorando a la
                     víctima del delito, pudiendo ser tanto personas físicas como
-                    jurídicas. En todas estas perspectivas, Borrego Lavín
-                    Abogados cuenta con la experiencia suficiente para brindar
+                    jurídicas. En todas estas perspectivas, <b>Borrego Lavín
+                    Abogados</b> cuenta con la experiencia suficiente para brindar
                     un servicio de la más alta calidad, siempre buscando
                     conseguir los objetivos planteados por los clientes y
                     procurando representar debidamente sus intereses.
@@ -109,7 +109,7 @@
                 </div>
               </div>
               <div class="cc-txt">
-                <div class="cont-text d-flex flex-column">
+                <div key="first" v-if='showFirst' class="cont-text d-flex flex-column">
                   <h3 class="mb-3">AMPARO PENAL</h3>
                   <p>
                     En <b>Borrego Lavín Abogados</b> tenemos amplia experiencia
@@ -143,14 +143,14 @@
                 </div>
               </div>
               <div class="cc-txt">
-                <div class="cont-text d-flex flex-column">
+                <div key="first" v-if='showFirst' class="cont-text d-flex flex-column">
                   <h3 class="mb-3">COMPLIANCE PENAL</h3>
                   <p>
                     La figura de la responsabilidad penal de las empresas cobró
                     vigencia en nuestro país a partir del año 2016. Por tal
                     motivo, los profesionistas de la materia penal tuvieron que
                     actualizarse para hacer frente a la misma. <br /><br />
-                    Los integrantes de Borrego Lavín Abogados son profesionistas
+                    Los integrantes de <b>Borrego Lavín Abogados</b> son profesionistas
                     con estudios en la materia para poder brindar una completa e
                     integral atención a asuntos ajustados a estas nuevas
                     realidades.
@@ -168,7 +168,7 @@
                 </div>
               </div>
               <div class="cc-txt">
-                <div class="cont-text d-flex flex-column">
+                <div key="first" v-if='showFirst' class="cont-text d-flex flex-column">
                   <h3 class="mb-3">EXTRADICIÓN</h3>
                   <p>
                     La extradición es una institución del derecho internacional
@@ -181,8 +181,8 @@
                     exradición bajo la que opera o pretende operar la figura en
                     el caso particular. <br /><br />
                     Esto es, tanto si se trata de extradición activa o pasiva o
-                    bien, si se pretende lograr o impedir la misma, Borrego
-                    Lavín Abogados tiene la preparación necesaria para hacer
+                    bien, si se pretende lograr o impedir la misma, <b>Borrego
+                    Lavín Abogados</b> tiene la preparación necesaria para hacer
                     frente al procedimiento en busca de lograr el objetivo
                     marcado por los clientes.
                   </p>
@@ -203,7 +203,8 @@ export default {
     // Carousel,
   },
   data: () => ({
-    counter: 0
+    counter: 0,
+    showFirst: true,
   }),
 
   methods: {
@@ -347,7 +348,17 @@ export default {
   height: 100%;
   font-family: "Abhaya Libre", serif;
   font-size: 13px;
+   transition: all 2s ease-in-out;
   /* background-color: rgb(212, 80, 102); */
+}
+.slidefade-enter-active,
+.slidefade-leave-active {
+  transition: all ease 0.4s;
+}
+.slidefade-enter,
+.slidefade-leave-to {
+  transform: translate(30px);
+  opacity: 0;
 }
 .cont-text h3 {
   margin-top: 1.5rem;

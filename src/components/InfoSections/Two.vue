@@ -1,5 +1,5 @@
 <template>
-  <v-card tile elevation="0" class="mt-14">
+  <v-card width="100vw" tile elevation="0" class="mt-14">
     <v-container
       class="d-flex justify-center ma-0 pa-0"
       fluid
@@ -8,7 +8,10 @@
     >
       <v-layout row wrap>
         <v-flex d-flex justify-start xs12 sm12 md6>
-          <img src="../../assets/2.jpg" style="width: 100%" />
+          <div class="cont-i2">
+            <div class="img2"></div>
+          </div>
+          <!-- <img src="../../assets/2.jpg" style="width: 100%" /> -->
         </v-flex>
         <v-flex d-flex flex-column justify-start xs12 sm12 md6>
           <h3 class="mb-4 mt-16 ml-12">NUESTRA MANERA DE TRABAJAR</h3>
@@ -54,5 +57,28 @@ h3 {
   font-family: "Abhaya Libre", serif;
   font-size: 13px;
   letter-spacing: 1px;
+}
+.cont-i2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cont-i2 .img2 {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/2.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.5s ease;
+}
+.cont-i2:hover .img2 {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/bn/2B.jpg");
+  background-size: 105%;
+  background-position: center;
 }
 </style>

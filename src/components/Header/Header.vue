@@ -1,19 +1,19 @@
 <template>
   <v-card
     class="header-cont ma-0 
-    d-flex flex-column justify-end align-center"
+    d-flex justify-center align-center"
     tile
     width="100vw"
     height="75vh"
     elevation="0"
   >
-    <div class="d-flex flex-column align-center justify-center mb-5">
-      <div class="wrapper">
-        <transition name="section">
-          <component :is="activeSection"></component>
-        </transition>
-      </div>
-      <div class="d-flex justify-center" style="width: 100%">
+      <div class="dh d-flex flex-column align-center justify-end" style="position: absolute; z-index: 10">
+          <p class="ma-0 pa-0" >
+      Borrego Lavín Abogados es un despacho jurídico especializado en <br />
+      la atención integral de asuntos relacionados a la materia penal
+    </p>
+
+    <div class="d-flex justify-center mt-10 ml-5" style="width: 100%">
         <label class="custom-radio ">
           <input
             type="radio"
@@ -29,11 +29,19 @@
           <span class="radio"></span>
         </label>
       </div>
-    </div>
-    <div class="d-flex align-center flex-column mr-5 mt-10" style="width: 100%">
+          <div class="d-flex align-center flex-column mt-13" style="width: 100%">
       <img src="../../assets/down-arrow.svg" width="35" />
       <span class="line-header mt-3"></span>
     </div>
+      </div>
+      <div class="wrapper">
+        <transition :name="transitionName">
+          <component :is="activeSection"></component>
+        </transition>
+      </div>
+      
+    <!-- </div> -->
+    
   </v-card>
 </template>
 
@@ -48,20 +56,27 @@ export default {
   },
   data: () => ({
     activeSection: "comp1",
+    transitionName: "fade-in"
   }),
 };
 </script>
 
 <style>
-.header-cont {
-  background-image: url("../../assets/fondo section 1.png");
-  background-size: cover;
+.dh{
+  width: 100%;
+  height: 100%;
+}
+.dh p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  color: #f7f7f7;
 }
 .wrapper {
   position: relative;
   overflow: hidden;
-  height: 25vh;
-  width: 50vw;
+  height: 75vh;
+  width: 100vw;
 }
 .wrapper > * {
   position: absolute;
@@ -70,10 +85,33 @@ export default {
   bottom: 0;
   right: 0;
 }
+.fade-in-enter {
+  opacity: 0;
+}
+
+.fade-in-enter-active {
+  transition: all 0.8s ease-in-out;
+}
+
+.fade-in-enter-to {
+  opacity: 1;
+}
+
+.fade-in-leave {
+  opacity: 1;
+}
+
+.fade-in-leave-active {
+  transition: all 0.8s ease-in-out;
+}
+
+.fade-in-leave-to {
+  opacity: 0;
+}
 
 .section-leave-active,
 .section-enter-active {
-  transition: all 0.01s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 .section-enter {
   opacity: 0;

@@ -1,9 +1,5 @@
 <template>
   <div class="comp1">
-    <p class="ma-0 pa-0">
-      Borrego Lavín Abogados es un despacho jurídico especializado en <br />
-      la atención integral de asuntos relacionados a la materia penal
-    </p>
   </div>
 </template>
 
@@ -15,15 +11,13 @@ export default {
 
 <style scoped>
 .comp1 {
+  width: 100vw;
+  height: 75vh;
+  background-image: url("../../assets/fondo section 1.png");
+  block-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.comp1 p {
-  font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
-  text-align: center;
-  color: #f7f7f7;
 }
 </style>
