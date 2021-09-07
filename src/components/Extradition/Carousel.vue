@@ -1,49 +1,85 @@
 <template>
-  <div class="carousel-wrapper mt-1">
+  <div class="carousel-c">
     <div class="controls">
-      <h1 class="pl-12">Extradicion</h1>
-      <div class="btns">
-        <v-btn class="mr-3" icon @click="changeSlide(-1)">
-          <img src="../../assets/slider left control.svg" width="30px" />
-        </v-btn>
-        <v-btn icon @click="changeSlide(1)">
-          <img src="../../assets/slider right control.svg" width="30px" />
-        </v-btn>
-      </div>
+              <h1 class="pl-8" style="color: transparent">Extradicion</h1>
+              <div class="btns">
+                <v-btn class="mr-3" icon @click="prev(index)">
+                  <img
+                    src="../../assets/slider left control.svg"
+                    width="30px"
+                  />
+                </v-btn>
+                <v-btn icon @click="next(index)">
+                  <img
+                    src="../../assets/slider right control.svg"
+                    width="30px"
+                  />
+                </v-btn>
+              </div>
+            </div>
+    <div class="carousel-panes ml-8" >
+      <slot></slot>
     </div>
-    <div class="carousel" :style="{ width, height }">
-      <slot />
-    </div>
+    
   </div>
 </template>
-
 <script>
 export default {
-  props: ["width", "height"],
-  methods: {
-    changeSlide(delta) {
-      const carousel = this.$el.querySelector(".carousel");
-      const width = carousel.offsetWidth;
-      carousel.scrollTo(carousel.scrollLeft + width * delta, 0);
-    },
+  props: {
+    value: {
+      type: Number,
+      default: 0
+    }
   },
+  data() {
+    return {
+      panes: [],
+      activePane: 0
+    };
+  },
+  watch: {
+    value(newVal) {
+      if (this.panes[newVal] !== undefined) this.goToPage(newVal);
+    }
+  },
+  mounted() {
+    if (this.$slots.default.length) {
+      this.$slots.default.forEach(pane => {
+        pane.elm.style.display = "none";
+        this.panes.push(pane);
+      });
+      this.panes[0].elm.style.display = "block";
+    }
+  },
+  methods: {
+    prev(index) {
+      let newPane = this.activePane;
+      if (this.activePane - 1 < 0) newPane = this.panes.length - 1;
+      else newPane = this.activePane - 1;
+      this.goToPage(newPane);
+       this.$store.commit("INDEX", index);
+    },
+    next(index) {
+      let newPane = this.activePane;
+      if (this.activePane + 1 >= this.panes.length) newPane = 0;
+      else newPane = this.activePane + 1;
+      this.goToPage(newPane);
+      this.$store.commit("INDEX", index);
+    },
+    goToPage(index) {
+      this.panes[this.activePane].elm.style.display = "none";
+      this.panes[index].elm.style.display = "block";
+      this.activePane = index;
+      this.$emit("input", index);
+    }
+  }
 };
 </script>
 
-<style scoped>
-.carousel {
-  display: flex;
-  overflow: hidden;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  border-bottom: 1.5px solid gray;
-}
-.carousel-wrapper {
-  display: flex;
-  flex-direction: column;
-  /* background-color: gold; */
-}
+<style>
 .controls {
+  width: 100%;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
   /* background-color: pink; */
@@ -57,9 +93,5 @@ export default {
 .controls .btns {
   display: flex;
   align-items: center;
-}
-.carousel > * {
-  flex: 1 0 100%;
-  scroll-snap-align: start;
 }
 </style>

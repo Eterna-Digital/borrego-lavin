@@ -1,6 +1,6 @@
 <template>
   <v-app style="background: #F7F7F7">
-    <Nav />
+    <Nav style="position: fixed; z-index: 100" />
     <v-main>
       <Container />
     </v-main>

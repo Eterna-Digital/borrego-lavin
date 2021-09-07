@@ -15,24 +15,24 @@
       align-center
       class="mt-0"
     >
-      <div style="width: 75%" class="d-flex justify-space-between pb-8">
+      <div class="cont-3 d-flex justify-space-between pb-8">
         <v-flex class="pa-0" d-flex flex-column justify-start xs12 sm12 md6>
           <div class="beige d-flex flex-column pa-0">
             <h3 class="mb-4">FIRMA JURÍDICA INNOVADORA</h3>
             <h4 class="sub-txt font-weight-bold mt-5 mb-4">
-              Abogados con amplia experiencia, <br />
+              Abogados con amplia experiencia,
               reconocidos a nivel nacional
             </h4>
             <p class="txt-info mt-5">
-              <b>Borrego Lavín Abogados</b> es una nueva firma jurídica <br />
-              integrada por abogados jóvenes con amplia experiencia <br />
-              en el ejercicio de la profesión, cuyos socios provienen de <br />
-              uno de los despachos penales más importantes y <br />
-              reconocidos a nivel nacional. <br /><br />
-              Aunado a esta experiencia profesional, nuestros <br />
-              profesionistas buscan el continuo crecimiento académico <br />
-              para la ampliación y actualización de los conocimientos <br />
-              jurídicos con miras a hacer frente de la mejor manera a <br />
+              <b>Borrego Lavín Abogados</b> es una nueva firma jurídica
+              integrada por abogados jóvenes con amplia experiencia
+              en el ejercicio de la profesión, cuyos socios provienen de
+              uno de los despachos penales más importantes y
+              reconocidos a nivel nacional.
+              Aunado a esta experiencia profesional, nuestros
+              profesionistas buscan el continuo crecimiento académico
+              para la ampliación y actualización de los conocimientos
+              jurídicos con miras a hacer frente de la mejor manera a
               todos los asuntos encomendados por nuestros clientes.
             </p>
           </div>
@@ -41,7 +41,6 @@
           <div class="cont-i3">
             <div class="img3"></div>
           </div>
-          <!-- <img src="../../assets/3.jpg" style="width: 100%" /> -->
         </v-flex>
       </div>
     </v-layout>
@@ -60,6 +59,9 @@ export default {
   background-image: url("../../assets/beige.png");
   background-size: 100% 45%;
   background-position-y: bottom;
+}
+.cont-3{
+  width: 75%;
 }
 h3 {
   font-family: "Montserrat", sans-serif;
@@ -104,5 +106,16 @@ h3 {
   background-image: url("../../assets/bn/3B.jpg");
   background-size: 105%;
   background-position: center;
+}
+@media screen and (max-width: 768px) {
+.cont-3{
+  width: 85%;
+  flex-direction: column;
+  justify-content: center;
+}
+.txt-info {
+  font-size: 15px;
+  letter-spacing: 0px;
+}
 }
 </style>

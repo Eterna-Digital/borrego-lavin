@@ -1,14 +1,19 @@
 <template>
   <v-footer color="#333F3D" class="pt-5" padless>
     <v-row justify="center" no-gutters>
-      <v-container class="d-flex justify-center" fluid grid-list-md wrap>
-        <v-layout row wrap d-flex align-center class="mr-16">
-          <v-flex d-flex justify-center xs12 sm12 md3>
+      <v-container
+        class="d-flex justify-center align-center"
+        fluid
+        grid-list-md
+        wrap
+      >
+        <v-layout class="layout" row wrap d-flex justify-center align-center>
+          <v-flex class="img" d-flex justify-center xs12 sm12 md3>
             <img src="../assets/bl_footer logo.svg" width="90px" />
           </v-flex>
           <v-flex d-flex justify-center xs12 sm12 md3>
             <div class="cont-f d-flex flex-column">
-              <p>ÁREAS DE PRÁCTICA</p>
+              <p class="p">ÁREAS DE PRÁCTICA</p>
               <ul>
                 <li class="mb-2">Consultoría Jurídico Penal</li>
                 <li class="mb-2">Litigio penal</li>
@@ -35,8 +40,10 @@
               <p>NOSOTROS</p>
               <ul>
                 <li class="mb-8">
-                  Somos un nuevo despacho jurídico <br/> especializado en la atención <br/>
-                  integral de asuntos relacionados a <br/> la materia penal.
+                  Somos un nuevo despacho jurídico <br />
+                  especializado en la atención <br />
+                  integral de asuntos relacionados a <br />
+                  la materia penal.
                 </li>
                 <li>AVISO DE PRIVACIDAD</li>
               </ul>
@@ -70,28 +77,59 @@ export default {
 </script>
 
 <style scoped>
-.cont-f{
-    width: 100%;
-    height: 100px;
+.cont-f {
+  width: 100%;
+  height: 100px;
 }
-.cont-f p{
-    font-size: 11px;;
+.cont-f p {
+  font-size: 11px;
+  font-weight: lighter;
+  color: #f8f8f8;
+}
+.cont-f ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+}
+.cont-f ul li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  color: #f8f8f8;
+}
+@media screen and (max-width: 768px) {
+  .img img{
+    margin-top: 2rem;
+    margin-right: 4rem;
+    margin-bottom: 2rem;
+  }
+  .cont-f {
+    width: 50%;
+    margin-bottom: 3rem;
+  }
+  .cont-f p {
+    font-size: 11px;
     font-weight: lighter;
-    color: #F8F8F8;
-}
-.cont-f ul{
+    color: #f8f8f8;
+  }
+  .cont-f ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: start;
     margin: 0;
     padding: 0;
-}
-.cont-f ul li{
+  }
+  .cont-f ul li {
     width: 100%;
     margin: 0;
     padding: 0;
     font-size: 10px;
-    color: #F8F8F8;
+    color: #f8f8f8;
+  }
 }
 </style>

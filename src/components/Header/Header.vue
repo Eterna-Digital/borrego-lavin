@@ -7,13 +7,16 @@
     height="75vh"
     elevation="0"
   >
-      <div class="dh d-flex flex-column align-center justify-end" style="position: absolute; z-index: 10">
-          <p class="ma-0 pa-0" >
-      Borrego Lavín Abogados es un despacho jurídico especializado en <br />
-      la atención integral de asuntos relacionados a la materia penal
-    </p>
+    <div
+      class="dh d-flex flex-column align-center justify-end"
+      style="position: absolute; z-index: 10"
+    >
+      <p class="">
+        Borrego Lavín Abogados es un despacho jurídico especializado en <br />
+        la atención integral de asuntos relacionados a la materia penal
+      </p>
 
-    <div class="d-flex justify-center mt-10 ml-5" style="width: 100%">
+      <div class="d-flex justify-center mt-10 ml-5" style="width: 100%">
         <label class="custom-radio ">
           <input
             type="radio"
@@ -29,19 +32,18 @@
           <span class="radio"></span>
         </label>
       </div>
-          <div class="d-flex align-center flex-column mt-13" style="width: 100%">
-      <img src="../../assets/down-arrow.svg" width="35" />
-      <span class="line-header mt-3"></span>
+      <div class="d-flex align-center flex-column mt-13" style="width: 100%">
+        <img src="../../assets/down-arrow.svg" width="35" />
+        <span class="line-header mt-3"></span>
+      </div>
     </div>
-      </div>
-      <div class="wrapper">
-        <transition :name="transitionName">
-          <component :is="activeSection"></component>
-        </transition>
-      </div>
-      
+    <div class="wrapper">
+      <transition :name="transitionName">
+        <component :is="activeSection"></component>
+      </transition>
+    </div>
+
     <!-- </div> -->
-    
   </v-card>
 </template>
 
@@ -56,13 +58,13 @@ export default {
   },
   data: () => ({
     activeSection: "comp1",
-    transitionName: "fade-in"
+    transitionName: "fade-in",
   }),
 };
 </script>
 
 <style>
-.dh{
+.dh {
   width: 100%;
   height: 100%;
 }
@@ -188,9 +190,13 @@ export default {
   height: 50px;
   background-color: rgb(255, 255, 255);
 }
-@media (min-width: 960px) {
+@media screen and (max-width: 768px) {
   .container {
     max-width: 100%;
+  }
+  .dh p{
+    text-justify: distribute;
+    font-size: 1.2rem;
   }
 }
 </style>

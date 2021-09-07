@@ -1,11 +1,11 @@
 <template>
-  <div class="d-flex flex-column justify-center align-center mt-16 mb-16">
+  <div class=" d-flex flex-column justify-center align-center mt-16 mb-16">
     <h1 class="titl text-center font-weight-bold mb-16">
       Las áreas de práctica de Borrego Lavín Abogados <br />
       son las siguientes:
     </h1>
     <v-card
-      class="d-flex justify-center align-center"
+      class="c-ext d-flex justify-center align-center"
       tile
       elevation="0"
       width="85%"
@@ -14,181 +14,188 @@
         tile
         elevation="0"
         width="85%"
-        height="95vh"
-        class="mt-10 mb-16 d-flex"
+        class="card-3 mt-10 mb-16 d-flex"
       >
         <div class="cont">
           <div class="line">
             <div class="number">
-              <h1 class="num"></h1>
+              <h1 class="num" id="number">0</h1>
             </div>
-            <div class="links-carousel">
-              <p>CONSULTORÍA JURÍDICO PENAL</p>
-              <p>LITIGIO PENAL</p>
-              <p>AMPARO PENAL</p>
-              <p>COMPLIANCE PENAL</p>
-              <p>EXTRADICIÓN</p>
+            <div class="links-carousel" >
+              <p v-for="(link, index) in links" :key="index">{{link.name}}</p>
             </div>
           </div>
         </div>
 
         <div class="crsl">
           <div class="carousel-wrapper mt-1">
-            <div class="controls">
-              <h1 class="pl-8" style="color: transparent">Extradicion</h1>
-              <div class="btns">
-                <v-btn class="mr-3" icon @click="changeSlide(-1)">
-                  <img
-                    src="../../assets/slider left control.svg"
-                    width="30px"
-                  />
-                </v-btn>
-                <v-btn icon @click="changeSlide(1)">
-                  <img
-                    src="../../assets/slider right control.svg"
-                    width="30px"
-                  />
-                </v-btn>
-              </div>
-            </div>
-            <div class="carousel">
-              <div class="cc-txt">
-                <div key='first' v-if='showFirst' class="cont-text d-flex flex-column">
-                  <h3 class="mb-3">CONSULTORÍA JURÍDICO PENAL</h3>
-                  <p>
-                    <b>Borrego Lavín Abogados</b> cuenta con profesionales de la
-                    materia con conocimientos amplios, suficientes y
-                    especializados para la atención de cualquier tipo de
-                    consulta relacionada a la materia penal. <br />
-                    <br />
-                    Esto es, nuestra firma legal busca brindar al cliente
-                    soluciones integrales a todos los cuestionamientos que
-                    pudieren tener, ya sea para hacer frente a un procedimiento
-                    penal como víctima del delito o como imputado, o bien, para
-                    buscar soluciones a conflictos por hechos que pudieran tener
-                    apariencia del delito.
-                    <br />
-                    <br />
-                    Este conocimiento jurídico penal abarca el análisis o
-                    atención de cualquier tipo de procedimiento iniciado o que
-                    pudiera iniciarse tanto en materia federal como en fuero
-                    común en toda la República, y aquellos derivados del mismo
-                    conflicto, léase recursos y juicios de amparo. <br />
-                    <br />
-                    Es precisamente este conocimiento de la materia el eje y
-                    guía en que descansa el ejercicio de la profesión y, por lo
-                    tanto, el actuar de esta firma.
-                  </p>
+            <carousel v-model="index">
+              <carousel-pane>
+                <div class="cc-txt">
+                  <div key="first" class="cont-text d-flex flex-column">
+                    <h3 class="mb-3">CONSULTORÍA JURÍDICO PENAL</h3>
+                    <p>
+                      <b>Borrego Lavín Abogados</b> cuenta con profesionales de
+                      la materia con conocimientos amplios, suficientes y
+                      especializados para la atención de cualquier tipo de
+                      consulta relacionada a la materia penal. <br />
+                      <br />
+                      Esto es, nuestra firma legal busca brindar al cliente
+                      soluciones integrales a todos los cuestionamientos que
+                      pudieren tener, ya sea para hacer frente a un
+                      procedimiento penal como víctima del delito o como
+                      imputado, o bien, para buscar soluciones a conflictos por
+                      hechos que pudieran tener apariencia del delito.
+                      <br />
+                      <br />
+                      Este conocimiento jurídico penal abarca el análisis o
+                      atención de cualquier tipo de procedimiento iniciado o que
+                      pudiera iniciarse tanto en materia federal como en fuero
+                      común en toda la República, y aquellos derivados del mismo
+                      conflicto, léase recursos y juicios de amparo. <br />
+                      <br />
+                      Es precisamente este conocimiento de la materia el eje y
+                      guía en que descansa el ejercicio de la profesión y, por
+                      lo tanto, el actuar de esta firma.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="cc-txt">
-                <div key="first" v-if='showFirst' class="cont-text d-flex flex-column">
-                  <h3 class="mb-3">LITIGIO PENAL</h3>
-                  <p>
-                    El litigio penal es la puesta en práctica de los
-                    conocimientos de la materia penal y procesal penal de las
-                    que los integrantes de esta firma son expertos. <br /><br />
-                    La atención del procedimiento penal puede darse desde la
-                    perspectiva de la defensa al imputado o asesorando a la
-                    víctima del delito, pudiendo ser tanto personas físicas como
-                    jurídicas. En todas estas perspectivas, <b>Borrego Lavín
-                    Abogados</b> cuenta con la experiencia suficiente para brindar
-                    un servicio de la más alta calidad, siempre buscando
-                    conseguir los objetivos planteados por los clientes y
-                    procurando representar debidamente sus intereses.
-                    <br /><br />
-                    El litigio penal abarca todas las etapas procedimentales,
-                    haciendo frente a cada una de ellas según corresponda,
-                    siempre velando porque se desarrollen conforme a derecho y
-                    protegiendo que los propios derechos de nuestros
-                    representados sean respetados por las distintas autoridades
-                    involucradas, interponiendo, de ser necesario, toda clase de
-                    recursos que la ley establezca o bien, acudiendo al juicio
-                    de amparo.
-                  </p>
+              </carousel-pane>
+              <carousel-pane>
+                <div class="cc-txt">
+                  <div
+                    key="first"
+                    v-if="showFirst"
+                    class="cont-text d-flex flex-column"
+                  >
+                    <h3 class="mb-3">LITIGIO PENAL</h3>
+                    <p>
+                      El litigio penal es la puesta en práctica de los
+                      conocimientos de la materia penal y procesal penal de las
+                      que los integrantes de esta firma son expertos.
+                      <br /><br />
+                      La atención del procedimiento penal puede darse desde la
+                      perspectiva de la defensa al imputado o asesorando a la
+                      víctima del delito, pudiendo ser tanto personas físicas
+                      como jurídicas. En todas estas perspectivas,
+                      <b>Borrego Lavín Abogados</b> cuenta con la experiencia
+                      suficiente para brindar un servicio de la más alta
+                      calidad, siempre buscando conseguir los objetivos
+                      planteados por los clientes y procurando representar
+                      debidamente sus intereses. <br /><br />
+                      El litigio penal abarca todas las etapas procedimentales,
+                      haciendo frente a cada una de ellas según corresponda,
+                      siempre velando porque se desarrollen conforme a derecho y
+                      protegiendo que los propios derechos de nuestros
+                      representados sean respetados por las distintas
+                      autoridades involucradas, interponiendo, de ser necesario,
+                      toda clase de recursos que la ley establezca o bien,
+                      acudiendo al juicio de amparo.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="cc-txt">
-                <div key="first" v-if='showFirst' class="cont-text d-flex flex-column">
-                  <h3 class="mb-3">AMPARO PENAL</h3>
-                  <p>
-                    En <b>Borrego Lavín Abogados</b> tenemos amplia experiencia
-                    y conocimiento para acudir al juicio de amparo como medio de
-                    protección de los derechos inherentes a nuestros
-                    representados. <br /><br />
-                    Como expertos de la materia penal, nuestro enfoque al acudir
-                    al juicio de amparo es la protección de los derechos humanos
-                    del cliente, para hacer frente a actos de las distintas
-                    autoridades involucradas que los hayan vulnerado. <br />Esta
-                    representación se da tanto por la vía de amparo indirecto
-                    como directo según corresponda, así como en la presentación
-                    o atención de cualquier incidencia o recurso dentro de la
-                    substanciación del juicio respectivo. <br /><br />Para
-                    evitar que la persona jurídica esté en riesgo de ser
-                    penalmente responsable, es necesario actuar de forma
-                    preventiva, esto es, generar una cultura de prevención del
-                    delito en ella. <br />
-                    La prevención del delito se da a partir de la implementación
-                    de un Programa de Cumplimiento Normativo, en el que se hace
-                    un análisis exhaustivo de las situaciones de riesgo en que
-                    pudiera actuar la empresa, para desarrollar herramientas
-                    internas con la finalidad de evitarlos o, en caso de que
-                    ocurran, localizarlos y hacer frente a ellos de forma
-                    adecuada. <br /><br />
-                    <b>Borrego Lavín Abogados</b> cuenta con expertos en la
-                    materia para diseñar, implementar, capacitar y gestionar
-                    estos Programas de Cumplimiento Normativos para todo tipo de
-                    empresas.
-                  </p>
+              </carousel-pane>
+              <carousel-pane>
+                <div class="cc-txt">
+                  <div
+                    key="first"
+                    v-if="showFirst"
+                    class="cont-text d-flex flex-column"
+                  >
+                    <h3 class="mb-3">AMPARO PENAL</h3>
+                    <p>
+                      En <b>Borrego Lavín Abogados</b> tenemos amplia
+                      experiencia y conocimiento para acudir al juicio de amparo
+                      como medio de protección de los derechos inherentes a
+                      nuestros representados. <br /><br />
+                      Como expertos de la materia penal, nuestro enfoque al
+                      acudir al juicio de amparo es la protección de los
+                      derechos humanos del cliente, para hacer frente a actos de
+                      las distintas autoridades involucradas que los hayan
+                      vulnerado. <br />Esta representación se da tanto por la
+                      vía de amparo indirecto como directo según corresponda,
+                      así como en la presentación o atención de cualquier
+                      incidencia o recurso dentro de la substanciación del
+                      juicio respectivo. <br /><br />Para evitar que la persona
+                      jurídica esté en riesgo de ser penalmente responsable, es
+                      necesario actuar de forma preventiva, esto es, generar una
+                      cultura de prevención del delito en ella. <br />
+                      La prevención del delito se da a partir de la
+                      implementación de un Programa de Cumplimiento Normativo,
+                      en el que se hace un análisis exhaustivo de las
+                      situaciones de riesgo en que pudiera actuar la empresa,
+                      para desarrollar herramientas internas con la finalidad de
+                      evitarlos o, en caso de que ocurran, localizarlos y hacer
+                      frente a ellos de forma adecuada. <br /><br />
+                      <b>Borrego Lavín Abogados</b> cuenta con expertos en la
+                      materia para diseñar, implementar, capacitar y gestionar
+                      estos Programas de Cumplimiento Normativos para todo tipo
+                      de empresas.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="cc-txt">
-                <div key="first" v-if='showFirst' class="cont-text d-flex flex-column">
-                  <h3 class="mb-3">COMPLIANCE PENAL</h3>
-                  <p>
-                    La figura de la responsabilidad penal de las empresas cobró
-                    vigencia en nuestro país a partir del año 2016. Por tal
-                    motivo, los profesionistas de la materia penal tuvieron que
-                    actualizarse para hacer frente a la misma. <br /><br />
-                    Los integrantes de <b>Borrego Lavín Abogados</b> son profesionistas
-                    con estudios en la materia para poder brindar una completa e
-                    integral atención a asuntos ajustados a estas nuevas
-                    realidades.
-                    <br /><br />
-                    El Compliance Penal, como modelo, podemos definirlo como la
-                    adopción de una cultura empresarial de cumplimiento
-                    normativo, cuya finalidad es evitar cualquier tipo de riesgo
-                    o comisión de hechos con apariencia de delito a nombre, por
-                    cuenta o en beneficio de la empresa. <br /><br />
-                    Esto es así, pues la comisión de hechos delictivos de esa
-                    naturaleza acarrea responsabilidad penal a la empresa, con
-                    independencia de aquella en que pudieran incurrir las
-                    personas físicas relacionadas.
-                  </p>
+              </carousel-pane>
+              <carousel-pane>
+                <div class="cc-txt">
+                  <div
+                    key="first"
+                    v-if="showFirst"
+                    class="cont-text d-flex flex-column"
+                  >
+                    <h3 class="mb-3">COMPLIANCE PENAL</h3>
+                    <p>
+                      La figura de la responsabilidad penal de las empresas
+                      cobró vigencia en nuestro país a partir del año 2016. Por
+                      tal motivo, los profesionistas de la materia penal
+                      tuvieron que actualizarse para hacer frente a la misma.
+                      <br /><br />
+                      Los integrantes de <b>Borrego Lavín Abogados</b> son
+                      profesionistas con estudios en la materia para poder
+                      brindar una completa e integral atención a asuntos
+                      ajustados a estas nuevas realidades. <br /><br />
+                      El Compliance Penal, como modelo, podemos definirlo como
+                      la adopción de una cultura empresarial de cumplimiento
+                      normativo, cuya finalidad es evitar cualquier tipo de
+                      riesgo o comisión de hechos con apariencia de delito a
+                      nombre, por cuenta o en beneficio de la empresa.
+                      <br /><br />
+                      Esto es así, pues la comisión de hechos delictivos de esa
+                      naturaleza acarrea responsabilidad penal a la empresa, con
+                      independencia de aquella en que pudieran incurrir las
+                      personas físicas relacionadas.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="cc-txt">
-                <div key="first" v-if='showFirst' class="cont-text d-flex flex-column">
-                  <h3 class="mb-3">EXTRADICIÓN</h3>
-                  <p>
-                    La extradición es una institución del derecho internacional
-                    que hace referencia al acto por el cual un Estado hace
-                    entrega a otro, de alguna persona que es reclamada para
-                    hacer frente a un proceso penal o a una pena. <br /><br />
-                    Nuestros profesionistas han participado activamente en
-                    procedimientos de extradición, por lo que están capacitados
-                    para asumir el rol correspondiente dependiendo el tipo de
-                    exradición bajo la que opera o pretende operar la figura en
-                    el caso particular. <br /><br />
-                    Esto es, tanto si se trata de extradición activa o pasiva o
-                    bien, si se pretende lograr o impedir la misma, <b>Borrego
-                    Lavín Abogados</b> tiene la preparación necesaria para hacer
-                    frente al procedimiento en busca de lograr el objetivo
-                    marcado por los clientes.
-                  </p>
+              </carousel-pane>
+              <carousel-pane>
+                <div class="cc-txt">
+                  <div
+                    key="first"
+                    v-if="showFirst"
+                    class="cont-text d-flex flex-column"
+                  >
+                    <h3 class="mb-3">EXTRADICIÓN</h3>
+                    <p>
+                      La extradición es una institución del derecho
+                      internacional que hace referencia al acto por el cual un
+                      Estado hace entrega a otro, de alguna persona que es
+                      reclamada para hacer frente a un proceso penal o a una
+                      pena. <br /><br />
+                      Nuestros profesionistas han participado activamente en
+                      procedimientos de extradición, por lo que están
+                      capacitados para asumir el rol correspondiente dependiendo
+                      el tipo de exradición bajo la que opera o pretende operar
+                      la figura en el caso particular. <br /><br />
+                      Esto es, tanto si se trata de extradición activa o pasiva
+                      o bien, si se pretende lograr o impedir la misma,
+                      <b>Borrego Lavín Abogados</b> tiene la preparación
+                      necesaria para hacer frente al procedimiento en busca de
+                      lograr el objetivo marcado por los clientes.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </carousel-pane>
+            </carousel>
           </div>
         </div>
       </v-card>
@@ -197,27 +204,39 @@
 </template>
 
 <script>
-// import Carousel from "./Carousel.vue";
+import Carousel from "./Carousel.vue";
+import CarouselPane from "./CarouselPane.vue";
+
 export default {
+  props: {
+    value: {
+      type: Number,
+      default: 0,
+    },
+  },
   components: {
-    // Carousel,
+    Carousel,
+    CarouselPane,
   },
   data: () => ({
     counter: 0,
     showFirst: true,
+    index: 0,
+     links: [
+        { name: 'CONSULTORÍA JURÍDICO PENAL' },
+        { name: 'LITIGIO PENAL' },
+        { name: 'AMPARO PENAL' },
+        { name: 'COMPLIANCE PENAL' },
+        { name: 'EXTRADICIÓN' },
+      ]
   }),
-
-  methods: {
-    changeSlide(delta) {
-      const carousel = this.$el.querySelector(".carousel");
-      const width = carousel.offsetWidth;
-      carousel.scrollTo(carousel.scrollLeft + width * delta, 0);
-    },
-  },
 };
 </script>
 
 <style>
+.card-3{
+  height: 95vh;
+}
 .titl {
   font-family: "Abhaya Libre", serif;
 }
@@ -233,21 +252,7 @@ export default {
   flex-direction: column;
   /* background-color: gold; */
 }
-.controls {
-  display: flex;
-  justify-content: space-between;
-  /* background-color: pink; */
-  margin-bottom: 0.5rem;
-  border-bottom: 1.5px solid gray;
-}
-.controls h1 {
-  font-size: 2rem;
-  font-family: "STIX Two Text", serif;
-}
-.controls .btns {
-  display: flex;
-  align-items: center;
-}
+
 .carousel > * {
   flex: 1 0 100%;
   scroll-snap-align: start;
@@ -348,7 +353,7 @@ export default {
   height: 100%;
   font-family: "Abhaya Libre", serif;
   font-size: 13px;
-   transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
   /* background-color: rgb(212, 80, 102); */
 }
 .slidefade-enter-active,
@@ -377,21 +382,14 @@ export default {
   align-items: center;
   /* background: #4299e1; */
 }
+@media screen and (max-width: 768px) {
+
+.cont{
+  display: none;
+}
+.c-ext{
+  padding-bottom: 5rem;
+
+}
+}
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,7 +1,5 @@
 <template>
-  
-  <div class="comp2">
-  </div>
+  <div class="comp2"></div>
 </template>
 
 <script>
@@ -13,7 +11,7 @@ export default {
 <style scoped>
 .comp2 {
   width: 100vw;
-    height: 75vh;
+  height: 75vh;
   background-image: url("../../assets/carrusel-entrada-2-imagem.jpg");
   background-size: 100%;
   display: flex;
@@ -22,16 +20,10 @@ export default {
   align-items: center;
   background-repeat: no-repeat;
   background-position: center;
-  /* transition: all 0.1s ease; */
 }
-.comp2:hover{
-  background-size: 105%;
-  background-position: center;
+@media screen and (max-width: 768px) {
+  .comp2{
+    background-size: cover;
+  }
 }
-/* .comp2 p {
-  font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
-  text-align: center;
-  color: #f7f7f7;
-} */
 </style>

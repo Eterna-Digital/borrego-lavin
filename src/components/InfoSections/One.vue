@@ -1,26 +1,26 @@
 <template>
   <v-container
-    class="d-flex justify-center ma-0 pa-0 ml-12"
+    class="cont-one d-flex justify-center ma-0 pa-0"
     fluid
     grid-list-md
     wrap
   >
-    <v-layout row wrap>
+    <v-layout row wrap d-flex justify-center>
       <v-flex d-flex flex-column justify-center xs12 sm12 md6>
         <h3 class="mb-4">BORREGO LAVÍN</h3>
-        <h4 class="sub-txt font-weight-bold mb-4 mt-5">
+        <h4 class="sub-txt-one font-weight-bold mb-4 mt-5">
           Protección de los intereses de <br />
           nuestros clientes
         </h4>
-        <p class="txt-info mt-5 mb-10">
-          A partir del estudio, análisis, estrategia o litigación, según <br />
-          corresponda a cada caso particular, ofrecemos soluciones <br />
-          encaminadas a la protección de los intereses de nuestros <br />
-          clientes, ya sea para hacer frente a un procedimiento <br />
+        <p class="txt-info-one ma-0 mt-5 mb-10">
+          A partir del estudio, análisis, estrategia o litigación, según
+          corresponda a cada caso particular, ofrecemos soluciones
+          encaminadas a la protección de los intereses de nuestros
+          clientes, ya sea para hacer frente a un procedimiento
           penal o fuera del mismo.
         </p>
       </v-flex>
-      <v-flex d-flex justify-end xs12 sm12 md6>
+      <v-flex class="flex2-1" d-flex flex-column  xs12 sm12 md6>
         <div class="cont-i">
           <div class="img"></div>
         </div>
@@ -36,18 +36,25 @@ export default {
 </script>
 
 <style>
+.cont-one{
+  margin-left: 2rem;
+}
 h3 {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
 }
-.sub-txt {
+.sub-txt-one {
   font-family: "Abhaya Libre", serif;
   font-size: 18px;
 }
-.txt-info {
+.txt-info-one {
+  padding-right: 2rem;
   font-family: "Abhaya Libre", serif;
   font-size: 13px;
   letter-spacing: 1px;
+}
+.flex2-1 {
+  justify-content: end;
 }
 .cont-i {
   width: 100%;
@@ -71,5 +78,19 @@ h3 {
   background-image: url("../../assets/bn/1B.jpg");
   background-size: 105%;
   background-position: center;
+}
+@media screen and (max-width: 768px) {
+ .cont-one{
+   margin-left: 1rem;
+ }
+ .flex2-1{
+   height: 30vh;
+   justify-content: center;
+ }
+ .txt-info-one {
+  margin-right: 5rem;
+  font-size: 15px !important;
+  text-align: start;
+}
 }
 </style>
