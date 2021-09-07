@@ -19,7 +19,7 @@
         <div class="cont">
           <div class="line">
             <div class="number">
-              <h1 class="num" id="number">0</h1>
+              <h1 class="num" id="number"></h1>
             </div>
             <div class="links-carousel" >
               <p v-for="(link, index) in links" :key="index">{{link.name}}</p>
