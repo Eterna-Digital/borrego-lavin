@@ -31,7 +31,8 @@
             :key="item.title"
             :to="item.path"
             class="btn-six-container-home"
-          >
+          > 
+          
             <p class="contact-bbtn text-caption mt-3 font-weight-light">
               {{ item.title }}
             </p>
@@ -95,7 +96,7 @@ export default {
 
     menuItems: [
       { title: "DESPACHO", path: "/" },
-      { title: "COMPLIANCE", path: "/" },
+      { title: "COMPLIANCE", path: "/compliance" },
       { title: "¿QUIÉNES SOMOS?", path: "/" },
     ],
   }),
@@ -154,8 +155,7 @@ export default {
   .contact-bbtn {
     justify-content: flex-start !important;
     width: 40vw !important;
-    font-size: 1.8rem !important;
-    /* background-color: gold; */
+    font-size: 1rem !important;
   }
   .btn-navc {
     font-family: "Montserrat", sans-serif;
@@ -163,10 +163,11 @@ export default {
     background-color: transparent;
   }
   .btn-six-container-home {
-    background-image: transparent !important;
+    background-image: none !important;
+    transition: none;
   }
   .btn-six-container-home:hover {
-    background-size: calc(100% - 0em) 1px, auto;
+    background-size: 0;
   }
   .btn-six-container-home:hover .contact-bbtn {
     color: #d3a876 !important;

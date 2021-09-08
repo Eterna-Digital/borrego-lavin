@@ -13,7 +13,7 @@
           </div>
         </v-flex>
         <v-flex d-flex flex-column justify-start xs12 sm12 md6>
-          <h3 class="h3-one mb-4 mt-16">NUESTRA MANERA DE TRABAJAR</h3>
+          <h3 class="h3-two mb-4 mt-16">NUESTRA MANERA DE TRABAJAR</h3>
           <p class="txt-info-2 pb-10 mt-5">
             La representación de los intereses de nuestros
             clientes dentro de los procedimientos penales es de
@@ -63,7 +63,7 @@ h3 {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
 }
-.h3-one{
+.h3-two{
   margin-left: 2rem;
 }
 .txt-info-2 {
@@ -72,6 +72,7 @@ h3 {
   letter-spacing: 1px;
   margin-left: 2rem;
   padding-right: 2rem;
+  text-align: justify;
 }
 .cont-i2 {
   width: 100%;
@@ -127,11 +128,21 @@ h3 {
   .flex-iff .cont-i2 {
     display: none;
   }
-  .txt-info-2 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  font-size: 15px;
-  letter-spacing: 0px;
+ .h3-two{
+  margin-left: 0rem;
 }
+.txt-info-2 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-left: 1rem;
+  padding-right: 1rem;
+}
+.flex-if .cont-i2 .img2 {
+    transition: none;
+  }
+  .flex-if .cont-i2:hover .img2 {
+    background-image: url("../../assets/2.jpg");
+    background-size: 100%;
+  }
 }
 </style>

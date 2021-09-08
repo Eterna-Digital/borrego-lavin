@@ -195,8 +195,9 @@ export default {
     max-width: 100%;
   }
   .dh p{
-    text-justify: distribute;
-    font-size: 1.2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0rem 2.5rem 0 2.5rem;
   }
 }
 </style>

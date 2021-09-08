@@ -2,6 +2,7 @@
   <v-app style="background: #F7F7F7">
     <Nav style="position: fixed; z-index: 100" />
     <v-main>
+      <router-view></router-view>
       <Container />
     </v-main>
     <Footer/>

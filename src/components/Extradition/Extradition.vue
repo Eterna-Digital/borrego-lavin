@@ -4,25 +4,15 @@
       Las áreas de práctica de Borrego Lavín Abogados <br />
       son las siguientes:
     </h1>
-    <v-card
-      class="c-ext d-flex justify-center align-center"
-      tile
-      elevation="0"
-      width="85%"
-    >
-      <v-card
-        tile
-        elevation="0"
-        width="85%"
-        class="card-3 mt-10 mb-16 d-flex"
-      >
+    <v-card class="c-ext d-flex justify-center align-center" tile elevation="0">
+      <v-card tile elevation="0" height="100vh" class="card-3 mt-10 d-flex">
         <div class="cont">
           <div class="line">
             <div class="number">
-              <h1 class="num" id="number"></h1>
+              <h1 class="num" id="number">0{{ (this.index + 1) }}</h1>
             </div>
-            <div class="links-carousel" >
-              <p v-for="(link, index) in links" :key="index">{{link.name}}</p>
+            <div class="links-carousel">
+              <p v-for="(link, i) in links" :key="i" :class="{ active: i == index  }" >{{ link.name }}</p>
             </div>
           </div>
         </div>
@@ -30,10 +20,10 @@
         <div class="crsl">
           <div class="carousel-wrapper mt-1">
             <carousel v-model="index">
-              <carousel-pane>
+              <carousel-pane >
                 <div class="cc-txt">
                   <div key="first" class="cont-text d-flex flex-column">
-                    <h3 class="mb-3">CONSULTORÍA JURÍDICO PENAL</h3>
+                    <h3 class="titl mb-3">CONSULTORÍA JURÍDICO PENAL</h3>
                     <p>
                       <b>Borrego Lavín Abogados</b> cuenta con profesionales de
                       la materia con conocimientos amplios, suficientes y
@@ -68,7 +58,7 @@
                     v-if="showFirst"
                     class="cont-text d-flex flex-column"
                   >
-                    <h3 class="mb-3">LITIGIO PENAL</h3>
+                    <h3 class="titl mb-3">LITIGIO PENAL</h3>
                     <p>
                       El litigio penal es la puesta en práctica de los
                       conocimientos de la materia penal y procesal penal de las
@@ -102,7 +92,7 @@
                     v-if="showFirst"
                     class="cont-text d-flex flex-column"
                   >
-                    <h3 class="mb-3">AMPARO PENAL</h3>
+                    <h3 class="titl mb-3">AMPARO PENAL</h3>
                     <p>
                       En <b>Borrego Lavín Abogados</b> tenemos amplia
                       experiencia y conocimiento para acudir al juicio de amparo
@@ -142,7 +132,7 @@
                     v-if="showFirst"
                     class="cont-text d-flex flex-column"
                   >
-                    <h3 class="mb-3">COMPLIANCE PENAL</h3>
+                    <h3 class="titl mb-3">COMPLIANCE PENAL</h3>
                     <p>
                       La figura de la responsabilidad penal de las empresas
                       cobró vigencia en nuestro país a partir del año 2016. Por
@@ -174,7 +164,7 @@
                     v-if="showFirst"
                     class="cont-text d-flex flex-column"
                   >
-                    <h3 class="mb-3">EXTRADICIÓN</h3>
+                    <h3 class="titl mb-3">EXTRADICIÓN</h3>
                     <p>
                       La extradición es una institución del derecho
                       internacional que hace referencia al acto por el cual un
@@ -204,6 +194,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Carousel from "./Carousel.vue";
 import CarouselPane from "./CarouselPane.vue";
 
@@ -222,20 +213,29 @@ export default {
     counter: 0,
     showFirst: true,
     index: 0,
-     links: [
-        { name: 'CONSULTORÍA JURÍDICO PENAL' },
-        { name: 'LITIGIO PENAL' },
-        { name: 'AMPARO PENAL' },
-        { name: 'COMPLIANCE PENAL' },
-        { name: 'EXTRADICIÓN' },
-      ]
+    links: [
+      { name: "CONSULTORÍA JURÍDICO PENAL" },
+      { name: "LITIGIO PENAL" },
+      { name: "AMPARO PENAL" },
+      { name: "COMPLIANCE PENAL" },
+      { name: "EXTRADICIÓN" },
+    ],
   }),
+  computed: {
+    ...mapState(["index"]),
+  },
+
+
 };
 </script>
 
 <style>
-.card-3{
-  height: 95vh;
+.c-ext {
+  width: 85%;
+  padding-bottom: 0;
+}
+.card-3 {
+  width: 85%;
 }
 .titl {
   font-family: "Abhaya Libre", serif;
@@ -250,7 +250,6 @@ export default {
 .carousel-wrapper {
   display: flex;
   flex-direction: column;
-  /* background-color: gold; */
 }
 
 .carousel > * {
@@ -269,7 +268,6 @@ export default {
   align-items: flex-start;
   height: 100%;
   width: 30%;
-  /* background-color: teal; */
 }
 .line {
   display: flex;
@@ -277,17 +275,16 @@ export default {
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  height: 79%;
+  height: 90%;
   border-right: 1.5px solid gray;
-  /* background-color: gold; */
 }
+
 .number {
   width: 100%;
+  height: 45vh;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  padding-bottom: 18vh;
-  /* background-color: blueviolet; */
 }
 .number h1 {
   color: #d3a876;
@@ -322,6 +319,11 @@ export default {
   margin: 0;
   padding: 0 0 0 0.5rem;
   border-top: 1.5px solid gray;
+  transition: all 0.1s ease-in-out;
+}
+.links-carousel p.active{
+  color: #d3a876;
+  letter-spacing: 1px;
 }
 
 .spnc p {
@@ -335,7 +337,6 @@ export default {
   bottom: 0;
   left: 0;
   text-transform: uppercase;
-  background-color: rgb(89, 89, 192);
   margin-block-start: 0em;
   margin-block-end: 0em;
   margin-inline-start: 0px;
@@ -346,15 +347,14 @@ export default {
   justify-content: center;
   height: 100vh;
   width: 100%;
-  /* background-color: green; */
 }
 .cont-text {
+  text-align: justify;
   width: 90%;
   height: 100%;
   font-family: "Abhaya Libre", serif;
   font-size: 13px;
   transition: all 2s ease-in-out;
-  /* background-color: rgb(212, 80, 102); */
 }
 .slidefade-enter-active,
 .slidefade-leave-active {
@@ -383,13 +383,33 @@ export default {
   /* background: #4299e1; */
 }
 @media screen and (max-width: 768px) {
-
-.cont{
-  display: none;
-}
-.c-ext{
-  padding-bottom: 5rem;
-
-}
+  .c-ext {
+    width: 100%;
+    margin-bottom: 10rem;
+    background-color: green;
+    padding-bottom: 0rem;
+  }
+  .card-3 {
+    width: 90%;
+    background-color: blue;
+    padding-bottom: 10rem !important;
+  }
+  .titl {
+    padding-left: 0rem;
+    text-align: left;
+  }
+  .cont-text {
+    width: 100%;
+    height: 100%;
+    font-family: "Abhaya Libre", serif;
+    font-size: 15px;
+    transition: all 2s ease-in-out;
+  }
+  .cont {
+    display: none;
+  }
+  .c-ext {
+    padding-bottom: 0rem;
+  }
 }
 </style>

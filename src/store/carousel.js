@@ -7,7 +7,10 @@ const mutations = {
          state.index = index
      }
   };
+  const getters ={
+  };
   export default {
     state,
     mutations,
+    getters
   };

@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="#333F3D" class="pt-5" padless>
+  <v-footer color="#333F3D" class="ftr pt-5" padless>
     <v-row justify="center" no-gutters>
       <v-container
         class="d-flex justify-center align-center"
@@ -68,14 +68,6 @@
   </v-footer>
 </template>
 
-<script>
-export default {
-  data: () => ({
-    links: ["Home", "About Us", "Team", "Services", "Blog", "Contact Us"],
-  }),
-};
-</script>
-
 <style scoped>
 .cont-f {
   width: 100%;
@@ -100,15 +92,19 @@ export default {
   padding: 0;
   font-size: 10px;
   color: #f8f8f8;
+  text-align: justify;
 }
 @media screen and (max-width: 768px) {
-  .img img{
+  .ftr {
+    margin-top: 10%;
+  }
+  .img img {
     margin-top: 2rem;
-    margin-right: 4rem;
+    margin-right: 7rem;
     margin-bottom: 2rem;
   }
   .cont-f {
-    width: 50%;
+    width: 70%;
     margin-bottom: 3rem;
   }
   .cont-f p {

@@ -14,13 +14,12 @@
         </h4>
         <p class="txt-info-one ma-0 mt-5 mb-10">
           A partir del estudio, análisis, estrategia o litigación, según
-          corresponda a cada caso particular, ofrecemos soluciones
-          encaminadas a la protección de los intereses de nuestros
-          clientes, ya sea para hacer frente a un procedimiento
-          penal o fuera del mismo.
+          corresponda a cada caso particular, ofrecemos soluciones encaminadas a
+          la protección de los intereses de nuestros clientes, ya sea para hacer
+          frente a un procedimiento penal o fuera del mismo.
         </p>
       </v-flex>
-      <v-flex class="flex2-1" d-flex flex-column  xs12 sm12 md6>
+      <v-flex class="flex2-1" d-flex flex-column xs12 sm12 md6>
         <div class="cont-i">
           <div class="img"></div>
         </div>
@@ -36,7 +35,7 @@ export default {
 </script>
 
 <style>
-.cont-one{
+.cont-one {
   margin-left: 2rem;
 }
 h3 {
@@ -52,6 +51,7 @@ h3 {
   font-family: "Abhaya Libre", serif;
   font-size: 13px;
   letter-spacing: 1px;
+  text-align: justify;
 }
 .flex2-1 {
   justify-content: end;
@@ -80,17 +80,28 @@ h3 {
   background-position: center;
 }
 @media screen and (max-width: 768px) {
- .cont-one{
-   margin-left: 1rem;
- }
- .flex2-1{
-   height: 30vh;
-   justify-content: center;
- }
- .txt-info-one {
-  margin-right: 5rem;
-  font-size: 15px !important;
-  text-align: start;
-}
+  .flex2-1 {
+    height: 30vh;
+    justify-content: center;
+  }
+  h3 {
+    padding-left: 1rem;
+  }
+  .sub-txt-one {
+    padding-left: 1rem;
+  }
+  .txt-info-one {
+    padding-right: 1rem;
+    font-size: 15px;
+    padding-left: 1rem;
+    text-align: justify;
+  }
+  .cont-i .img {
+    transition: none;
+  }
+  .cont-i:hover .img {
+    background-image: url("../../assets/1.jpg");
+    background-size: 100%;
+  }
 }
 </style>
