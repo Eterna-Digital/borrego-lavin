@@ -84,7 +84,7 @@ h3 {
 .cont-i2 .img2 {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/2.jpg");
+  background-image: url("../../../assets/2.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -93,7 +93,7 @@ h3 {
 .cont-i2:hover .img2 {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/bn/2B.jpg");
+  background-image: url("../../../assets/bn/2B.jpg");
   background-size: 105%;
   background-position: center;
 }
@@ -109,7 +109,7 @@ h3 {
   .flex-if .cont-i2 .img2 {
     width: 100%;
     height: 100%;
-    background-image: url("../../assets/2.jpg");
+    background-image: url("../../../assets/2.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -118,7 +118,7 @@ h3 {
   .flex-if .cont-i2:hover .img2 {
     width: 100%;
     height: 100%;
-    background-image: url("../../assets/bn/2B.jpg");
+    background-image: url("../../../assets/bn/2B.jpg");
     background-size: 105%;
     background-position: center;
   }
@@ -141,7 +141,7 @@ h3 {
     transition: none;
   }
   .flex-if .cont-i2:hover .img2 {
-    background-image: url("../../assets/2.jpg");
+    background-image: url("../../../assets/2.jpg");
     background-size: 100%;
   }
 }

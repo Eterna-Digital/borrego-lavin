@@ -1,5 +1,5 @@
 <template>
-  <div class=" d-flex flex-column justify-center align-center mt-16 mb-16">
+  <div class="card-ext d-flex flex-column justify-center align-center mt-16 mb-16">
     <h1 class="titl text-center font-weight-bold mb-16">
       Las áreas de práctica de Borrego Lavín Abogados <br />
       son las siguientes:
@@ -20,6 +20,7 @@
         <div class="crsl">
           <div class="carousel-wrapper mt-1">
             <carousel v-model="index">
+              
               <carousel-pane >
                 <div class="cc-txt">
                   <div key="first" class="cont-text d-flex flex-column">
@@ -231,11 +232,10 @@ export default {
 
 <style>
 .c-ext {
-  width: 85%;
   padding-bottom: 0;
 }
 .card-3 {
-  width: 85%;
+  width: 70% !important;
 }
 .titl {
   font-family: "Abhaya Libre", serif;
@@ -281,7 +281,7 @@ export default {
 
 .number {
   width: 100%;
-  height: 45vh;
+  height: 48vh;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -296,10 +296,10 @@ export default {
   font-family: "STIX Two Text", serif;
 }
 .links-carousel {
-  height: 45vh;
+  height: 43vh;
   width: 20vw;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 0.3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -319,7 +319,7 @@ export default {
   margin: 0;
   padding: 0 0 0 0.5rem;
   border-top: 1.5px solid gray;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in;
 }
 .links-carousel p.active{
   color: #d3a876;
@@ -386,12 +386,10 @@ export default {
   .c-ext {
     width: 100%;
     margin-bottom: 10rem;
-    background-color: green;
     padding-bottom: 0rem;
   }
   .card-3 {
     width: 90%;
-    background-color: blue;
     padding-bottom: 10rem !important;
   }
   .titl {

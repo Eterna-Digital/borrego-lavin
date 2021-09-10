@@ -54,7 +54,7 @@ export default {
 <style>
 .cont-t {
   background-color: rgb(255, 255, 255);
-  background-image: url("../../assets/beige.png");
+  background-image: url("../../../assets/beige.png");
   background-size: 100% 45%;
   background-position-y: bottom;
 }
@@ -95,7 +95,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 140vh;
-  background-image: url("../../assets/3.jpg");
+  background-image: url("../../../assets/3.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -104,7 +104,7 @@ export default {
 .cont-i3:hover .img3 {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/bn/3B.jpg");
+  background-image: url("../../../assets/bn/3B.jpg");
   background-size: 105%;
   background-position: center;
 }
@@ -129,7 +129,7 @@ export default {
     transition: none;
   }
   .cont-i3:hover .img3 {
-    background-image: url("../../assets/3.jpg");
+    background-image: url("../../../assets/3.jpg");
     background-size: 100%;
   }
 }

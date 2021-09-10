@@ -12,7 +12,7 @@ export default {
 .comp2 {
   width: 100vw;
   height: 75vh;
-  background-image: url("../../assets/carrusel-entrada-2-imagem.jpg");
+  background-image: url("../../../assets/carrusel-entrada-2-imagem.jpg");
   background-size: 100%;
   display: flex;
   flex-direction: column;

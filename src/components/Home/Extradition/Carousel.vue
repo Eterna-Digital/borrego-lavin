@@ -5,12 +5,12 @@
               <div class="btns">
                 <v-btn class="btn-c mr-3" icon @click="prev">
                   <img
-                    src="../../assets/slider left control.svg"
+                    src="../../../assets/slider left control.svg"
                   />
                 </v-btn>
                 <v-btn class="btn-c" icon @click="next">
                   <img
-                    src="../../assets/slider right control.svg"
+                    src="../../../assets/slider right control.svg"
                   />
                 </v-btn>
               </div>
@@ -35,6 +35,7 @@ export default {
       panes: [],
       activePane: 0,
       activeTitle: "",
+      counter: 0,
       linksTitle: [
       { name: "CONSULTORÍA JURÍDICO PENAL" },
       { name: "LITIGIO PENAL" },
@@ -83,7 +84,6 @@ export default {
 </script>
 
 <style>
-
 .controls {
   width: 100%;
   height: 3rem;

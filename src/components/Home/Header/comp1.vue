@@ -13,7 +13,7 @@ export default {
 .comp1 {
   width: 100vw;
   height: 75vh;
-  background-image: url("../../assets/fondo section 1.png");
+  background-image: url("../../../assets/fondo section 1.png");
   block-size: cover;
   display: flex;
   flex-direction: column;

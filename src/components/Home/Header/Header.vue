@@ -11,6 +11,9 @@
       class="dh d-flex flex-column align-center justify-end"
       style="position: absolute; z-index: 10"
     >
+      <div class="logo-header d-flex justify-center">
+        <img src="../../../assets/bl_nav bar logo.svg" />
+      </div>
       <p class="">
         Borrego Lavín Abogados es un despacho jurídico especializado en <br />
         la atención integral de asuntos relacionados a la materia penal
@@ -33,7 +36,7 @@
         </label>
       </div>
       <div class="d-flex align-center flex-column mt-13" style="width: 100%">
-        <img src="../../assets/down-arrow.svg" width="35" />
+        <img src="../../../assets/down-arrow.svg" width="35" />
         <span class="line-header mt-3"></span>
       </div>
     </div>
@@ -68,10 +71,15 @@ export default {
   width: 100%;
   height: 100%;
 }
+.dh .logo-header img {
+  display: none;
+}
+
 .dh p {
   font-family: "Montserrat", sans-serif;
   font-weight: lighter;
-  text-align: center;
+  text-align: justify !important;
+  text-justify:distribute-all-lines;
   color: #f7f7f7;
 }
 .wrapper {
@@ -194,10 +202,14 @@ export default {
   .container {
     max-width: 100%;
   }
-  .dh p{
+  .dh .logo-header img {
+  display: block;
+  margin-bottom: 2rem;
+}
+  .dh p {
     text-align: center;
-    font-size: 0.8rem;
-    padding: 0rem 2.5rem 0 2.5rem;
+    font-size: 0.6rem;
+    /* padding: 0rem 2rem 0 2rem; */
   }
 }
 </style>

@@ -26,16 +26,32 @@
               />
             </div>
           </v-list-item>
-          <v-list-item
-            v-for="item in menuItems"
-            :key="item.title"
-            :to="item.path"
-            class="btn-six-container-home"
-          > 
-          
-            <p class="contact-bbtn text-caption mt-3 font-weight-light">
-              {{ item.title }}
-            </p>
+          <v-list-item>
+            <v-btn text class="btn-six-container-home mr-4">
+              <router-link to="/" style="text-decoration: none">
+                <p class="contact-bbtn text-caption mt-3 font-weight-light">
+                  DESPACHO
+                </p>
+              </router-link>
+            </v-btn>
+          </v-list-item>
+          <v-list-item>
+            <v-btn text class="btn-six-container-home mr-4">
+              <router-link to="/compliance" style="text-decoration: none">
+                <p class="contact-bbtn text-caption mt-3 font-weight-light">
+                  COMPLIANCE
+                </p>
+              </router-link>
+            </v-btn>
+          </v-list-item>
+          <v-list-item>
+            <v-btn text class="btn-six-container-home mr-4">
+              <router-link to="/quienes-somos" style="text-decoration: none">
+                <p class="contact-bbtn text-caption mt-3 font-weight-light">
+                  ¿QUIÉNES SOMOS?
+                </p>
+              </router-link>
+            </v-btn>
           </v-list-item>
           <v-list-item>
             <div class="ma-0 ml-0 mt-10 pa-0">
@@ -67,18 +83,28 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only mr-6">
-        <v-btn
-          text
-          class="btn-six-container-home mr-4"
-          v-for="item in menuItems"
-          :key="item.title"
-          :to="item.path"
-        >
-          <p class="contact-bbtn text-caption mt-3 font-weight-light">
-            {{ item.title }}
-          </p>
+        <v-btn text class="btn-six-container-home mr-4">
+          <router-link to="/" style="text-decoration: none">
+            <p class="contact-bbtn text-caption mt-3 font-weight-light">
+              DESPACHO
+            </p>
+          </router-link>
         </v-btn>
-        <div class="ma-0 mt-4 pa-0">
+        <v-btn text class="btn-six-container-home mr-4">
+          <router-link to="/compliance" style="text-decoration: none">
+            <p class="contact-bbtn text-caption mt-3 font-weight-light">
+              COMPLIANCE
+            </p>
+          </router-link>
+        </v-btn>
+        <v-btn text class="btn-six-container-home mr-4">
+          <router-link to="/quienes-somos" style="text-decoration: none">
+            <p class="contact-bbtn text-caption mt-3 font-weight-light">
+              ¿QUIÉNES SOMOS?
+            </p>
+          </router-link>
+        </v-btn>
+        <div class="ma-0 mt-4 pa-0 ml-3">
           <v-btn color="white" outlined tile small class="btn-nav mb-1">
             CONTACTO
           </v-btn>
@@ -93,12 +119,6 @@ export default {
   name: "Nav",
   data: () => ({
     sidebar: false,
-
-    menuItems: [
-      { title: "DESPACHO", path: "/" },
-      { title: "COMPLIANCE", path: "/compliance" },
-      { title: "¿QUIÉNES SOMOS?", path: "/" },
-    ],
   }),
   methods: {
     clear() {

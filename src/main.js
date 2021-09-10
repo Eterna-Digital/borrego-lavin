@@ -1,17 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
-import VueRouter from 'vue-router'
 import store from './store'
-import router from "./router"
+import router from "./router/index"
+import VuePageTransition from 'vue-page-transition'
 
-Vue.use(VueRouter)
 Vue.config.productionTip = false
 
 new Vue({
   vuetify,
-  VueRouter,
   store,
   router,
+  VuePageTransition,
   render: h => h(App)
 }).$mount('#app')

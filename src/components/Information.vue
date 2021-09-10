@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import One from "./InfoSections/One.vue";
-import Two from "./InfoSections/Two.vue";
-import Three from "./InfoSections/Three.vue";
+import One from "../components/Home/InfoSections/One.vue";
+import Two from "../components/Home/InfoSections/Two.vue";
+import Three from "../components/Home/InfoSections/Three.vue";
 
 export default {
   name: "Information",

@@ -98,10 +98,8 @@
   .ftr {
     margin-top: 10%;
   }
-  .img img {
-    margin-top: 2rem;
-    margin-right: 7rem;
-    margin-bottom: 2rem;
+  .img {
+    padding: 5% 40% 10% 0 !important;
   }
   .cont-f {
     width: 70%;

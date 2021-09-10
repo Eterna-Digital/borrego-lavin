@@ -20,8 +20,8 @@
         </p>
       </v-flex>
       <v-flex class="flex2-1" d-flex flex-column xs12 sm12 md6>
-        <div class="cont-i">
-          <div class="img"></div>
+        <div class="cont-i-h">
+          <div class="img-h"></div>
         </div>
       </v-flex>
     </v-layout>
@@ -56,26 +56,26 @@ h3 {
 .flex2-1 {
   justify-content: end;
 }
-.cont-i {
+.cont-i-h {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.cont-i .img {
+.cont-i-h .img-h {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/1.jpg");
+  background-image: url("../../../assets/1.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   transition: all 0.5s ease;
 }
-.cont-i:hover .img {
+.cont-i-h:hover .img-h {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/bn/1B.jpg");
+  background-image: url("../../../assets/bn/1B.jpg");
   background-size: 105%;
   background-position: center;
 }
@@ -96,11 +96,11 @@ h3 {
     padding-left: 1rem;
     text-align: justify;
   }
-  .cont-i .img {
+  .cont-i-h .img-h {
     transition: none;
   }
-  .cont-i:hover .img {
-    background-image: url("../../assets/1.jpg");
+  .cont-i-h:hover .img-h {
+    background-image: url("../../../assets/1.jpg");
     background-size: 100%;
   }
 }
