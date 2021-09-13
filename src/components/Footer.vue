@@ -45,7 +45,9 @@
                   integral de asuntos relacionados a <br />
                   la materia penal.
                 </li>
-                <li>AVISO DE PRIVACIDAD</li>
+                <router-link to="/privacy" style="text-decoration: none"
+                  ><li class="privacy" style="text-decoration-line: underline;">AVISO DE PRIVACIDAD</li></router-link
+                >
               </ul>
             </div>
           </v-flex>
@@ -60,7 +62,7 @@
         <div class="d-flex justify-center align-center">
           <v-icon color="#959595" x-small class="mr-2">mdi-copyright</v-icon>
           <p style="color: #959595" class="caption ma-0 pa-0">
-            {{ new Date().getFullYear() }} Borrego Lavin
+            {{ new Date().getFullYear() }} Borrego Lavín
           </p>
         </div>
       </v-col>
@@ -94,6 +96,9 @@
   color: #f8f8f8;
   text-align: justify;
 }
+.privacy:hover {
+  color: #d3a876;
+}
 @media screen and (max-width: 768px) {
   .ftr {
     margin-top: 10%;
@@ -125,5 +130,8 @@
     font-size: 10px;
     color: #f8f8f8;
   }
+  .privacy:hover {
+  color: #d3a876;
+}
 }
 </style>

@@ -380,7 +380,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: #4299e1; */
 }
 @media screen and (max-width: 768px) {
   .c-ext {

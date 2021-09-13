@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "../views/Home.vue";
 import Compliance from "../views/Compliance.vue";
 import QuienesSomos from "../views/QuienesSomos";
+import Privacy from "../views/Privacy";
 import VuePageTransition from "vue-page-transition";
 
 Vue.use(Router);
@@ -27,6 +28,12 @@ export default new Router({
       path: "/quienes-somos",
       name: "QuienesSomos",
       component: QuienesSomos,
+      meta: { transition: "fade-in-up" },
+    },
+    {
+      path: "/privacy",
+      name: Privacy,
+      component: Privacy,
       meta: { transition: "fade-in-up" },
     },
   ],

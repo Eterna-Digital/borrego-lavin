@@ -105,7 +105,7 @@
           </router-link>
         </v-btn>
         <div class="ma-0 mt-4 pa-0 ml-3">
-          <v-btn color="white" outlined tile small class="btn-nav mb-1">
+          <v-btn  outlined tile small class="btn-nav mb-1">
             CONTACTO
           </v-btn>
         </div>
@@ -165,11 +165,12 @@ export default {
 }
 .btn-nav {
   font-family: "Montserrat", sans-serif;
-  color: "#F7F7F7";
+  color: #ffffff !important;
   background-color: transparent;
 }
 .btn-nav:hover {
-  background-color: #000000;
+  color: rgb(0, 0, 0) !important;
+  background-color: #ffffff;
 }
 @media screen and (max-width: 768px) {
   .contact-bbtn {
