@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Compliance from "../views/Compliance.vue";
 import QuienesSomos from "../views/QuienesSomos";
 import Privacy from "../views/Privacy";
+import Contact from "../views/Contact"
 import VuePageTransition from "vue-page-transition";
 
 Vue.use(Router);
@@ -36,6 +37,12 @@ export default new Router({
       component: Privacy,
       meta: { transition: "fade-in-up" },
     },
+    {
+      path: "/contacto",
+      name: Contact,
+      component: Contact,
+      meta: { transition: "fade-in-up" },
+    }
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

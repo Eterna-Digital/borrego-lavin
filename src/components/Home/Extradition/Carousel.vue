@@ -1,14 +1,14 @@
 <template>
   <div class="carousel-c">
     <div class="controls">
-              <h1 class="pl-8" style="color: transparent">Extradicion</h1>
-              <div class="btns">
-                <v-btn class="btn-c mr-3" icon @click="prev">
+              <!-- <h1 class="pl-8 t-car caption" v-for="(link, i) in linksTitle" :key="i" :class="{ active: i == index  }" >{{ link.name }}</h1> -->
+              <div class="btns ">
+                <v-btn class="btn-c mr-3 mb-2" icon @click="prev">
                   <img
                     src="../../../assets/slider left control.svg"
                   />
                 </v-btn>
-                <v-btn class="btn-c" icon @click="next">
+                <v-btn class="btn-c mb-2" icon @click="next">
                   <img
                     src="../../../assets/slider right control.svg"
                   />
@@ -22,6 +22,7 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
   props: {
     value: {
@@ -49,6 +50,9 @@ export default {
     value(newVal) {
       if (this.panes[newVal] !== undefined) this.goToPage(newVal);
     }
+  },
+  computed: {
+    ...mapState(["index"]),
   },
   mounted() {
     if (this.$slots.default.length) {
@@ -86,15 +90,10 @@ export default {
 <style>
 .controls {
   width: 100%;
-  height: 3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 0.5rem;
   border-bottom: 1.5px solid gray;
-}
-.controls h1 {
-  font-size: 2rem;
-  font-family: "STIX Two Text", serif;
 }
 .controls .btns {
   display: flex;
@@ -111,7 +110,7 @@ export default {
   width: 100%;
   height: 3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 0.5rem;
   border-bottom: 1.5px solid gray;
 }

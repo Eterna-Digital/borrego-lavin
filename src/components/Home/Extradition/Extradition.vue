@@ -1,5 +1,7 @@
 <template>
-  <div class="card-ext d-flex flex-column justify-center align-center mt-16 mb-16">
+  <div
+    class="card-ext d-flex flex-column justify-center align-center mt-16 mb-16"
+  >
     <h1 class="titl text-center font-weight-bold mb-16">
       Las áreas de práctica de Borrego Lavín Abogados <br />
       son las siguientes:
@@ -9,19 +11,32 @@
         <div class="cont">
           <div class="line">
             <div class="number">
-              <h1 class="num" id="number">0{{ (this.index + 1) }}</h1>
+              <h1 class="num" id="number">0{{ this.index + 1 }}</h1>
             </div>
             <div class="links-carousel">
-              <p v-for="(link, i) in links" :key="i" :class="{ active: i == index  }" >{{ link.name }}</p>
+              <p
+                v-for="(link, i) in links"
+                :key="i"
+                :class="{ active: i == index }"
+              >
+                {{ link.name }}
+              </p>
             </div>
           </div>
         </div>
 
         <div class="crsl">
-          <div class="carousel-wrapper mt-1">
+          <div class="carousel-wrapper mt-1 pt-3">
+            <h1
+              class="t-car font-weight-bold"
+              v-for="(link, i) in links"
+              :key="i"
+              :class="{ active: i == index }"
+            >
+              {{ link.name }}
+            </h1>
             <carousel v-model="index">
-              
-              <carousel-pane >
+              <carousel-pane>
                 <div class="cc-txt">
                   <div key="first" class="cont-text d-flex flex-column">
                     <h3 class="titl mb-3">CONSULTORÍA JURÍDICO PENAL</h3>
@@ -215,18 +230,16 @@ export default {
     showFirst: true,
     index: 0,
     links: [
-      { name: "CONSULTORÍA JURÍDICO PENAL" },
-      { name: "LITIGIO PENAL" },
-      { name: "AMPARO PENAL" },
-      { name: "COMPLIANCE PENAL" },
-      { name: "EXTRADICIÓN" },
+      { name: "Consultoría jurídico penal" },
+      { name: "Litigio penal" },
+      { name: "Amparo penal" },
+      { name: "Compliance penal" },
+      { name: "Extradición" },
     ],
   }),
   computed: {
     ...mapState(["index"]),
   },
-
-
 };
 </script>
 
@@ -321,9 +334,25 @@ export default {
   border-top: 1.5px solid gray;
   transition: all 0.1s ease-in;
 }
-.links-carousel p.active{
+.links-carousel p.active {
   color: #d3a876;
   letter-spacing: 1px;
+}
+.carousel-wrapper .t-car {
+  width: 70%;
+  display: none;
+  font-weight: lighter;
+  font-family: "STIX Two Text", serif;
+  color: #444343;
+  position: absolute;
+  font-size: 1.8rem;
+  padding-left: 2rem;
+}
+.carousel-wrapper .t-car.active {
+  color: #444343;
+  display: block;
+  font-weight: lighter;
+  /* font-family: "STIX Two Text", serif !important; */
 }
 
 .spnc p {
@@ -388,7 +417,7 @@ export default {
     padding-bottom: 0rem;
   }
   .card-3 {
-    width: 90%;
+    width: 95% !important;
     padding-bottom: 10rem !important;
   }
   .titl {
@@ -407,6 +436,14 @@ export default {
   }
   .c-ext {
     padding-bottom: 0rem;
+  }
+  .carousel-wrapper {
+    width: 100vw;
+  }
+  .carousel-wrapper .t-car {
+    font-size: 1.2rem;
+    padding-left: 0;
+    margin-top: 0.5rem;
   }
 }
 </style>

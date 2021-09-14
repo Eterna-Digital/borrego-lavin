@@ -17,7 +17,7 @@
       >
         <v-list class="d-flex flex-column">
           <v-list-item>
-            <div class="mb-10" style="width: 100%; height: 10vh">
+            <div class="mb-10 img-nav" style="width: 100%; height: 10vh">
               <v-img
                 alt="Logo"
                 contain
@@ -27,7 +27,7 @@
             </div>
           </v-list-item>
           <v-list-item>
-            <v-btn text class="btn-six-container-home mr-4">
+            <v-btn text class="btn-six-container-home">
               <router-link to="/" style="text-decoration: none">
                 <p class="contact-bbtn text-caption mt-3 font-weight-light">
                   DESPACHO
@@ -36,7 +36,7 @@
             </v-btn>
           </v-list-item>
           <v-list-item>
-            <v-btn text class="btn-six-container-home mr-4">
+            <v-btn text class="btn-six-container-home">
               <router-link to="/compliance" style="text-decoration: none">
                 <p class="contact-bbtn text-caption mt-3 font-weight-light">
                   COMPLIANCE
@@ -45,7 +45,7 @@
             </v-btn>
           </v-list-item>
           <v-list-item>
-            <v-btn text class="btn-six-container-home mr-4">
+            <v-btn text class="btn-six-container-home">
               <router-link to="/quienes-somos" style="text-decoration: none">
                 <p class="contact-bbtn text-caption mt-3 font-weight-light">
                   ¿QUIÉNES SOMOS?
@@ -71,10 +71,10 @@
         </v-btn>
       </span>
       <v-toolbar-title>
-        <div class="d-flex align-center ml-16">
+        <div class="img-nav d-flex align-center ">
           <v-img
             alt="Logo"
-            class="shrink hidden-sm-and-down"
+            class=" shrink hidden-sm-and-down"
             contain
             src="../assets/bl_nav bar logo.svg"
             width="150"
@@ -83,21 +83,21 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only mr-6">
-        <v-btn text class="btn-six-container-home mr-4">
+        <v-btn text class="btn-six-container-home">
           <router-link to="/" style="text-decoration: none">
             <p class="contact-bbtn text-caption mt-3 font-weight-light">
               DESPACHO
             </p>
           </router-link>
         </v-btn>
-        <v-btn text class="btn-six-container-home mr-4">
+        <v-btn text class="btn-six-container-home">
           <router-link to="/compliance" style="text-decoration: none">
             <p class="contact-bbtn text-caption mt-3 font-weight-light">
               COMPLIANCE
             </p>
           </router-link>
         </v-btn>
-        <v-btn text class="btn-six-container-home mr-4">
+        <v-btn text class="btn-six-container-home">
           <router-link to="/quienes-somos" style="text-decoration: none">
             <p class="contact-bbtn text-caption mt-3 font-weight-light">
               ¿QUIÉNES SOMOS?
@@ -105,9 +105,11 @@
           </router-link>
         </v-btn>
         <div class="ma-0 mt-4 pa-0 ml-3">
-          <v-btn  outlined tile small class="btn-nav mb-1">
+          <router-link to="/contacto" style="text-decoration: none">
+          <v-btn outlined tile small class="btn-nav mb-1">
             CONTACTO
           </v-btn>
+          </router-link>
         </div>
       </v-toolbar-items>
     </v-toolbar>
@@ -136,9 +138,13 @@ export default {
   cursor: pointer;
   z-index: 30;
 }
+.img-nav {
+  margin-left: 3rem;
+}
 .btn-six-container-home {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   text-decoration: none;
   background-image: linear-gradient(#f7f7f7, #f7f7f7);
   background-size: 0 1px, auto;
@@ -173,17 +179,22 @@ export default {
   background-color: #ffffff;
 }
 @media screen and (max-width: 768px) {
+  .img-nav {
+    margin-left: 1rem;
+  }
   .contact-bbtn {
     justify-content: flex-start !important;
     width: 40vw !important;
-    font-size: 1rem !important;
+    font-size: 0.6rem !important;
   }
   .btn-navc {
+    margin-left: 1rem;
     font-family: "Montserrat", sans-serif;
     color: white !important;
     background-color: transparent;
   }
   .btn-six-container-home {
+    justify-content: start !important;
     background-image: none !important;
     transition: none;
   }
