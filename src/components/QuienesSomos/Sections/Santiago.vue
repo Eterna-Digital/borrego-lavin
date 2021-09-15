@@ -119,9 +119,9 @@ h3 {
   .sub-txt1-c {
     padding-left: 1rem;
   }
-  .txt-st {
+  /* .txt-st {
     display: none;
-  }
+  } */
   .cont-i-sn .img-sn {
     transition: none;
   }

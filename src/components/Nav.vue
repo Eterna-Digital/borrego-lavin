@@ -55,9 +55,11 @@
           </v-list-item>
           <v-list-item>
             <div class="ma-0 ml-0 mt-10 pa-0">
+              <router-link to="/contacto" style="text-decoration: none">
               <v-btn outlined tile small class="btn-navc mb-1">
                 CONTACTO
               </v-btn>
+              </router-link>
             </div>
           </v-list-item>
         </v-list>

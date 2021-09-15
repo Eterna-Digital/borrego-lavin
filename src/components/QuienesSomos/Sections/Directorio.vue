@@ -38,19 +38,19 @@
               </v-list-item>
             </v-list>
           </v-flex>
-          <v-flex d-flex flex-column justify-center align-end xs12 sm12 md6>
+          <v-flex class="flex-2" xs12 sm12 md6>
             <v-list class="ma-0 pa-0" style="background: #F7F7F7">
               <v-list-item class="d-flex flex-column align-start ma-0 pa-0">
-                <h5 class="h-q mb-4">SANTIAGO D.PÉREZ ALBARRÁN</h5>
-                <h5 style="color:#D3A876" class="h-q mb-4">ASOCIADO</h5>
+                <h5 class="h-q mb-4 pl-0">SANTIAGO D.PÉREZ ALBARRÁN</h5>
+                <h5 style="color:#D3A876" class="h-q mb-4 pl-0">ASOCIADO</h5>
               </v-list-item>
               <v-list-item class="d-flex flex-column align-start ma-0 pa-0">
-                <h5 class="h-q mb-4">FIDEL ÁNGEL ESCAMILLA SOSA</h5>
-                <h5 style="color:#D3A876" class="h-q mb-4">ASISTENTE LEGAL</h5>
+                <h5 class="h-q mb-4 pl-0">FIDEL ÁNGEL ESCAMILLA SOSA</h5>
+                <h5 style="color:#D3A876" class="h-q mb-4 pl-0">ASISTENTE LEGAL</h5>
               </v-list-item>
               <v-list-item class="d-flex flex-column align-start ma-0 pa-0">
-                <h5 class="h-q mb-4">MAURICIO IBARRA GARRIDO</h5>
-                <h5 style="color:#D3A876" class="h-q mb-4">ASISTENTE LEGAL</h5>
+                <h5 class="h-q mb-4 pl-0">MAURICIO IBARRA GARRIDO</h5>
+                <h5 style="color:#D3A876" class="h-q mb-4 pl-0">ASISTENTE LEGAL</h5>
               </v-list-item>
             </v-list>
           </v-flex>
@@ -82,5 +82,29 @@ export default {};
 .h-q {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
+}
+.flex-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+@media screen and (max-width: 768px) {
+  .h3-q {
+    width: 85%;
+  }
+  .h-q {
+    margin: 0;
+    padding-left: 0;
+  }
+  .lay-qs {
+    width: 100%;
+  }
+  .flex-2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 }
 </style>

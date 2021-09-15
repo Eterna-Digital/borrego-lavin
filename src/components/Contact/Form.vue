@@ -3,7 +3,7 @@
     <h3 class="h3-h mb-10">
       ESTAMOS PARA AYUDARTE
     </h3>
-    <v-card width="50%" class="mb-10" elevation="0" color="#F7F7F7">
+    <v-card class="contact mb-10" elevation="0" color="#F7F7F7">
       <v-form v-model="valid">
         <v-container>
           <v-col>
@@ -48,6 +48,7 @@
                 v-model="comment"
                 clearable
                 rows="4"
+                no-resize
                 row-height="30"
                 clear-icon="mdi-close-circle"
                 label="Comentario"
@@ -92,4 +93,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.contact{
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+.contact{
+  width: 100%;
+}
+}
+</style>
